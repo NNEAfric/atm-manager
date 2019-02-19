@@ -9,8 +9,18 @@ export class MainappComponent implements OnInit {
   public appPages = [
     {
       title: 'My ATM\'s',
-      url: '/atms',
-      icon: 'home'
+      url: '/mainapp/atms',
+      icon: 'card'
+    },
+    {
+      title: 'Profile',
+      url: '/mainapp/profile',
+      icon: 'contact'
+    },
+    {
+      title: 'About',
+      url: '/mainapp/about',
+      icon: 'information-circle-outline'
     }
   ];
   constructor() {}
