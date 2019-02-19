@@ -6,6 +6,6 @@ import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [AtmsComponent, MainappComponent],
-  imports: [CommonModule, IonicModule.forRoot()]
+  imports: [CommonModule, IonicModule]
 })
 export class MainappModule {}
