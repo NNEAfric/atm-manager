@@ -8,14 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class MainappComponent implements OnInit {
   public appPages = [
     {
-      title: 'Home',
-      url: '/home',
+      title: 'My ATM\'s',
+      url: '/atms',
       icon: 'home'
-    },
-    {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
     }
   ];
   constructor() {}
