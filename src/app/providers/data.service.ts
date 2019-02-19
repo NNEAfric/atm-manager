@@ -1,6 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Data, UserData } from '../app.models';
+import { Data, UserData, PaginatedData, ATMData } from '../app.models';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
@@ -18,7 +18,21 @@ export class DataService {
     return this.httpClient.get<Data<UserData>>(`${this.baseUrl}/managers/me`);
   }
 
-  getATMs() {
-    return this.httpClient.get(`${this.baseUrl}/managers/me/atms`);
+  getATMs(params?: {
+    paginate?: number;
+    page?: number;
+  }): Observable<PaginatedData<ATMData>> {
+    return this.httpClient.get<PaginatedData<ATMData>>(
+      `${this.baseUrl}/managers/me/atms`,
+      {
+        params:
+          params === undefined
+            ? {}
+            : {
+                paginate: params.paginate.toString(),
+                page: params.page.toString()
+              }
+      }
+    );
   }
 }
