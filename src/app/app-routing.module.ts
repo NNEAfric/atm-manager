@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'mainapp',
     pathMatch: 'full'
   },
   {
-    path: 'home',
+    path: 'mainapp',
     loadChildren: './mainapp/mainapp.module#MainappModule'
   },
   {
